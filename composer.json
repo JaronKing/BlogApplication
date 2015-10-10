@@ -2,6 +2,7 @@
     "name": "jaron/jaronking.dev",
     "license": "proprietary",
     "type": "project",
+    "description": "Blogging web application"
     "autoload": {
         "psr-4": {
             "": "src/"
