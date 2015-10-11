@@ -8,4 +8,9 @@ Blog\UserBundle\Entity\User:
             id: true
             generator:
                 strategy: AUTO
+    oneToMany:
+        postsCreated:
+            targetEntity: Blog\AdminBundle\Entity\Post
+            mappedBy: createdBy
+            nullable: true
     lifecycleCallbacks: {  }
