@@ -1,0 +1,206 @@
+<?php
+
+namespace Blog\AdminBundle\Entity;
+
+/**
+ * Post
+ */
+class Post
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $body;
+
+    /**
+     * @var \DateTime
+     */
+    private $dateCreated;
+
+    /**
+     * @var string
+     */
+    private $createdBy;
+
+    /**
+     * @var \DateTime
+     */
+    private $lastEdited;
+
+    /**
+     * @var boolean
+     */
+    private $enabled;
+
+    /**
+     * @var boolean
+     */
+    private $deleted;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Post
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set body
+     *
+     * @param string $body
+     *
+     * @return Post
+     */
+    public function setBody($body)
+    {
+        $this->body = $body;
+
+        return $this;
+    }
+
+    /**
+     * Get body
+     *
+     * @return string
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
+     * Set dateCreated
+     *
+     * @param \DateTime $dateCreated
+     *
+     * @return Post
+     */
+    public function setDateCreated($dateCreated)
+    {
+        $this->dateCreated = $dateCreated;
+
+        return $this;
+    }
+
+    /**
+     * Get dateCreated
+     *
+     * @return \DateTime
+     */
+    public function getDateCreated()
+    {
+        return $this->dateCreated;
+    }
+
+    /**
+     * Set lastEdited
+     *
+     * @param \DateTime $lastEdited
+     *
+     * @return Post
+     */
+    public function setLastEdited($lastEdited)
+    {
+        $this->lastEdited = $lastEdited;
+
+        return $this;
+    }
+
+    /**
+     * Get lastEdited
+     *
+     * @return \DateTime
+     */
+    public function getLastEdited()
+    {
+        return $this->lastEdited;
+    }
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     *
+     * @return Post
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Get enabled
+     *
+     * @return boolean
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
+
+    /**
+     * Set deleted
+     *
+     * @param boolean $deleted
+     *
+     * @return Post
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Get deleted
+     *
+     * @return boolean
+     */
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+
+}

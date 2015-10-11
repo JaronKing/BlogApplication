@@ -1,3 +1,7 @@
 blog_main_homepage:
     path:     /
     defaults: { _controller: BlogMainBundle:Default:index }
+
+blog_main_post:
+    path:    /post/{id}
+    defaults: { _controller: BlogMainBundle:Default:post }
