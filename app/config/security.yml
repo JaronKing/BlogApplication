@@ -25,7 +25,7 @@ security:
                 provider: fos_userbundle
                 check_path: admin.login_check
                 login_path: admin.login
-                default_target_path: admin_homepage
+                default_target_path: blog_admin_homepage
                 always_use_default_target_path: false
             logout:
                 path: admin.logout

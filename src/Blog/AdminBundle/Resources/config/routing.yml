@@ -1,3 +1,27 @@
 blog_admin_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: BlogAdminBundle:Default:index }
+
+admin.login:
+    pattern:   /login
+    defaults: { _controller: BlogAdminBundle:Security:login }
+
+admin.login_check:
+    pattern:   /login_check
+
+admin.logout:
+    pattern:  /logout
+
+admin.register:
+    pattern:  /register
+    defaults: { _controller: BlogAdminBundle:Registration:register }
+
+checkEmail:
+    pattern:  /check-email
+
+confirm:
+    pattern:  /confirm/{token}
+
+confirmed:
+    pattern:  /confirmed
+    defaults: { _controller: BlogAdminBundle:Registration:confirmed }
