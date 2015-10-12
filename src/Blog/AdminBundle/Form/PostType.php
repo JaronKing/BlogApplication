@@ -2,7 +2,6 @@
 
 namespace Blog\AdminBundle\Form;
 
-use Blog\AdminBundle\Entity\Tag;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
