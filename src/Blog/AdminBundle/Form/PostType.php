@@ -16,14 +16,19 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('body')
+            ->add('title', 'text', array(
+                'attr' => array( 'class' => 'form-control' )
+            ))
+            ->add('body', 'textarea', array(
+                'attr' => array( 'class' => 'form-control' )
+            ))
             ->add('tag', 'entity', array(
                 'class' => 'BlogAdminBundle:Tag',
                 'property' => 'name',
                 'required' => false,
                 'multiple' => true,
                 'mapped' => false,
+                'attr' => array( 'class' => 'form-control' )
             ))
         ;
     }

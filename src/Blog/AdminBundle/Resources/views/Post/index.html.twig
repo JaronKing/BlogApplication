@@ -1,14 +1,9 @@
 {% extends '::adminBase.html.twig' %}
 
 {% block body -%}
-<div class="box">
-    <div class="box-header">
-        <h3>Post List</h3>
-    <div>
 
-    <div class="box-body">
 
-        <table id="dataTable" class="records_list">
+        <table id="" class="records_list">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -46,6 +41,7 @@
             </tbody>
         </table>
 
+
             <ul>
             <li>
                 <a href="{{ path('post_new') }}">
@@ -53,6 +49,4 @@
                 </a>
             </li>
         </ul>
-    </div>
-</div>
     {% endblock %}
