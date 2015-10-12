@@ -21,7 +21,9 @@
 
         <nav>
             <ul class="pager">
-                <li><a href="{{ path('blog_main_post', { id : post.id - 1}) }}">Previous</a></li>
+                {% if post.id != 1 %}
+                    <li><a href="{{ path('blog_main_post', { id : post.id - 1}) }}">Previous</a></li>
+                {% endif %}
                 <li><a href="{{ path('blog_main_post', { id : post.id + 1}) }}">Next</a></li>
             </ul>
         </nav>

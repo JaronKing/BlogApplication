@@ -5,3 +5,7 @@ blog_main_homepage:
 blog_main_post:
     path:    /post/{id}
     defaults: { _controller: BlogMainBundle:Default:post }
+
+blog_main_about:
+    path:   /about
+    defaults: { _controller: BlogMainBundle:Default:about }

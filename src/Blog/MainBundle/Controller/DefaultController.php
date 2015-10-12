@@ -10,7 +10,9 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $posts = $em->getRepository('BlogAdminBundle:Post')->findAll();
-        return $this->render('BlogMainBundle:Default:index.html.twig');
+        return $this->render('BlogMainBundle:Default:index.html.twig', array(
+            'posts' => $posts
+        ));
     }
 
     public function postAction($id)
@@ -23,5 +25,10 @@ class DefaultController extends Controller
         return $this->render('BlogMainBundle:Default:post.html.twig', array(
             'post' => $post
         ));
+    }
+
+    public function aboutAction()
+    {
+        return $this->render('BlogMainBundle:Default:about.html.twig');
     }
 }
