@@ -1,0 +1,30 @@
+tag:
+    path:     /
+    defaults: { _controller: "BlogAdminBundle:Tag:index" }
+
+tag_show:
+    path:     /{id}/show
+    defaults: { _controller: "BlogAdminBundle:Tag:show" }
+
+tag_new:
+    path:     /new
+    defaults: { _controller: "BlogAdminBundle:Tag:new" }
+
+tag_create:
+    path:     /create
+    defaults: { _controller: "BlogAdminBundle:Tag:create" }
+    methods:  POST
+
+tag_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BlogAdminBundle:Tag:edit" }
+
+tag_update:
+    path:     /{id}/update
+    defaults: { _controller: "BlogAdminBundle:Tag:update" }
+    methods:  [POST, PUT]
+
+tag_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BlogAdminBundle:Tag:delete" }
+    methods:  [POST, DELETE]

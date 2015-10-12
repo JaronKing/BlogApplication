@@ -13,4 +13,8 @@ Blog\UserBundle\Entity\User:
             targetEntity: Blog\AdminBundle\Entity\Post
             mappedBy: createdBy
             nullable: true
+        tagsCreated:
+            targetEntity: Blog\AdminBundle\Entity\Tag
+            mappedBy: tagsCreated
+            nullable: true
     lifecycleCallbacks: {  }

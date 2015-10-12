@@ -36,4 +36,16 @@ Blog\AdminBundle\Entity\Post:
             join_column:
                 name: createdBy_id
                 referencedColumnName: id
+    manyToMany:
+        tags:
+            targetEntity: Blog\AdminBundle\Entity\Tag
+            inversedBy: posts
+            joinTable:
+                name: posts_tags
+                joinColumns:
+                    post_id:
+                        referencedColumnName: id
+                inversedJoinColumns:
+                    tag_id:
+                        referencedColumnName: id
     lifecycleCallbacks: {  }

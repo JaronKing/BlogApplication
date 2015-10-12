@@ -1,6 +1,7 @@
 <?php
 
 namespace Blog\AdminBundle\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Post
@@ -203,4 +204,74 @@ class Post
     }
 
 
+
+    /**
+     * Set createdBy
+     *
+     * @param \Blog\UserBundle\Entity\User $createdBy
+     *
+     * @return Post
+     */
+    public function setCreatedBy(\Blog\UserBundle\Entity\User $createdBy = null)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \Blog\UserBundle\Entity\User
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $tags;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
+    /**
+     * Add tag
+     *
+     * @param \Blog\AdminBundle\Entity\Tag $tag
+     *
+     * @return Post
+     */
+    public function addTag(\Blog\AdminBundle\Entity\Tag $tag)
+    {
+        $this->tags[] = $tag;
+
+        return $this;
+    }
+
+    /**
+     * Remove tag
+     *
+     * @param \Blog\AdminBundle\Entity\Tag $tag
+     */
+    public function removeTag(\Blog\AdminBundle\Entity\Tag $tag)
+    {
+        $this->tags->removeElement($tag);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
 }

@@ -1,12 +1,13 @@
 <?php
 
 namespace Blog\AdminBundle\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Post
+ * Tag
  */
-class Post
+class Tag
 {
     /**
      * @var integer
@@ -16,12 +17,12 @@ class Post
     /**
      * @var string
      */
-    private $title;
+    private $name;
 
     /**
      * @var string
      */
-    private $body;
+    private $description;
 
     /**
      * @var \DateTime
@@ -52,14 +53,14 @@ class Post
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    protected $tags;
+    protected $posts;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->tags = new ArrayCollection();
+        $this->posts = new ArrayCollection();
     }
 
     /**
@@ -73,51 +74,51 @@ class Post
     }
 
     /**
-     * Set title
+     * Set name
      *
-     * @param string $title
+     * @param string $name
      *
-     * @return Post
+     * @return Tag
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get name
      *
      * @return string
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * Set body
+     * Set description
      *
-     * @param string $body
+     * @param string $description
      *
-     * @return Post
+     * @return Tag
      */
-    public function setBody($body)
+    public function setDescription($description)
     {
-        $this->body = $body;
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get body
+     * Get description
      *
      * @return string
      */
-    public function getBody()
+    public function getDescription()
     {
-        return $this->body;
+        return $this->description;
     }
 
     /**
@@ -125,7 +126,7 @@ class Post
      *
      * @param \DateTime $dateCreated
      *
-     * @return Post
+     * @return Tag
      */
     public function setDateCreated($dateCreated)
     {
@@ -145,11 +146,35 @@ class Post
     }
 
     /**
+     * Set createdBy
+     *
+     * @param string $createdBy
+     *
+     * @return Tag
+     */
+    public function setCreatedBy($createdBy)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return string
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
      * Set lastEdited
      *
      * @param \DateTime $lastEdited
      *
-     * @return Post
+     * @return Tag
      */
     public function setLastEdited($lastEdited)
     {
@@ -173,7 +198,7 @@ class Post
      *
      * @param boolean $enabled
      *
-     * @return Post
+     * @return Tag
      */
     public function setEnabled($enabled)
     {
@@ -191,15 +216,12 @@ class Post
     {
         return $this->enabled;
     }
-
-
-
     /**
      * Set deleted
      *
      * @param boolean $deleted
      *
-     * @return Post
+     * @return Tag
      */
     public function setDeleted($deleted)
     {
@@ -217,61 +239,38 @@ class Post
     {
         return $this->deleted;
     }
+
     /**
-     * Set createdBy
+     * Add post
      *
-     * @param \Blog\UserBundle\Entity\User $createdBy
+     * @param \Blog\AdminBundle\Entity\Post $post
      *
-     * @return Post
+     * @return Tag
      */
-    public function setCreatedBy(\Blog\UserBundle\Entity\User $createdBy = null)
+    public function addPost(\Blog\AdminBundle\Entity\Post $post)
     {
-        $this->createdBy = $createdBy;
+        $this->posts[] = $post;
 
         return $this;
     }
 
     /**
-     * Get createdBy
+     * Remove post
      *
-     * @return \Blog\UserBundle\Entity\User
+     * @param \Blog\AdminBundle\Entity\Post $post
      */
-    public function getCreatedBy()
+    public function removePost(\Blog\AdminBundle\Entity\Post $post)
     {
-        return $this->createdBy;
+        $this->posts->removeElement($post);
     }
 
     /**
-     * Add tag
-     *
-     * @param \Blog\AdminBundle\Entity\Tag $tag
-     *
-     * @return Post
-     */
-    public function addTag(\Blog\AdminBundle\Entity\Tag $tag)
-    {
-        $this->tags[] = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Remove tag
-     *
-     * @param \Blog\AdminBundle\Entity\Tag $tag
-     */
-    public function removeTag(\Blog\AdminBundle\Entity\Tag $tag)
-    {
-        $this->tags->removeElement($tag);
-    }
-
-    /**
-     * Get tags
+     * Get posts
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getTags()
+    public function getPosts()
     {
-        return $this->tags;
+        return $this->posts;
     }
 }

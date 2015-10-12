@@ -1,0 +1,39 @@
+Blog\AdminBundle\Entity\Tag:
+    type: entity
+    table: null
+    repositoryClass: Blog\AdminBundle\Entity\TagRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        dateCreated:
+            type: datetime
+        lastEdited:
+            type: datetime
+        enabled:
+            type: boolean
+            nullable: true
+        deleted:
+            type: boolean
+            nullable: true
+    manyToOne:
+        createdBy:
+            targetEntity: Blog\UserBundle\Entity\User
+            inversedBy: tagsCreated
+            nullable: false
+            join_column:
+                name: createdBy_id
+                referencedColumnName: id
+    manyToMany:
+        posts:
+            targetEntity: Blog\AdminBundle\Entity\Post
+            mappedBy: tags
+    lifecycleCallbacks: {  }
