@@ -275,4 +275,9 @@ class Post
     {
         return $this->tags;
     }
+
+    public function getTag()
+    {
+        return $this->tags;
+    }
 }

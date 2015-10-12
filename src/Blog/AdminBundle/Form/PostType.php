@@ -26,7 +26,7 @@ class PostType extends AbstractType
                 'property' => 'name',
                 'required' => false,
                 'multiple' => true,
-                'mapped' => false,
+                'mapped' => true,
                 'attr' => array( 'class' => 'form-control' )
             ))
         ;

@@ -7,7 +7,7 @@ blog_admin_post:
     prefix:   /post
 
 blog_admin_homepage:
-    path:     /
+    path:     /dashboard
     defaults: { _controller: BlogAdminBundle:Default:index }
 
 admin.login:

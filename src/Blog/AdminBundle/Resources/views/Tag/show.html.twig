@@ -1,8 +1,6 @@
 {% extends '::adminBase.html.twig' %}
-
+{% set title = 'Show Tag' %}
 {% block body -%}
-    <h1>Tag</h1>
-
     <table class="record_properties">
         <tbody>
             <tr>
@@ -33,10 +31,19 @@
                 <th>Deleted</th>
                 <td>{{ entity.deleted }}</td>
             </tr>
+            <tr>
+                <th>Posts</th>
+                <td>
+                    {% for post in entity.posts %}
+                        {{ post.title }}<br/>
+                    {% endfor %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
+
+     <ul class="record_actions">
     <li>
         <a href="{{ path('tag') }}">
             Back to the list
