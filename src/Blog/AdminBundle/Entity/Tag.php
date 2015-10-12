@@ -146,30 +146,6 @@ class Tag
     }
 
     /**
-     * Set createdBy
-     *
-     * @param string $createdBy
-     *
-     * @return Tag
-     */
-    public function setCreatedBy($createdBy)
-    {
-        $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    /**
-     * Get createdBy
-     *
-     * @return string
-     */
-    public function getCreatedBy()
-    {
-        return $this->createdBy;
-    }
-
-    /**
      * Set lastEdited
      *
      * @param \DateTime $lastEdited
@@ -272,5 +248,29 @@ class Tag
     public function getPosts()
     {
         return $this->posts;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param \Blog\UserBundle\Entity\User $createdBy
+     *
+     * @return Tag
+     */
+    public function setCreatedBy(\Blog\UserBundle\Entity\User $createdBy = null)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \Blog\UserBundle\Entity\User
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
     }
 }

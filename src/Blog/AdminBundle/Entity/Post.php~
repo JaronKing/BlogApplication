@@ -50,6 +50,19 @@ class Post
 
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    protected $tags;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -179,6 +192,8 @@ class Post
         return $this->enabled;
     }
 
+
+
     /**
      * Set deleted
      *
@@ -202,9 +217,6 @@ class Post
     {
         return $this->deleted;
     }
-
-
-
     /**
      * Set createdBy
      *
@@ -227,18 +239,6 @@ class Post
     public function getCreatedBy()
     {
         return $this->createdBy;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $tags;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tags = new ArrayCollection();
     }
 
     /**

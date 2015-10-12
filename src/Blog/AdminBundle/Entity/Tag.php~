@@ -51,6 +51,19 @@ class Tag
 
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    protected $posts;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -133,30 +146,6 @@ class Tag
     }
 
     /**
-     * Set createdBy
-     *
-     * @param string $createdBy
-     *
-     * @return Tag
-     */
-    public function setCreatedBy($createdBy)
-    {
-        $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    /**
-     * Get createdBy
-     *
-     * @return string
-     */
-    public function getCreatedBy()
-    {
-        return $this->createdBy;
-    }
-
-    /**
      * Set lastEdited
      *
      * @param \DateTime $lastEdited
@@ -203,7 +192,6 @@ class Tag
     {
         return $this->enabled;
     }
-
     /**
      * Set deleted
      *
@@ -226,18 +214,6 @@ class Tag
     public function getDeleted()
     {
         return $this->deleted;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $posts;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->posts = new ArrayCollection();
     }
 
     /**
