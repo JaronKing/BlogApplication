@@ -1,0 +1,16 @@
+Blog\UserBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Blog\UserBundle\Entity\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        postsCreated:
+            targetEntity: Blog\AdminBundle\Entity\Post
+            mappedBy: createdBy
+            nullable: true
+    lifecycleCallbacks: {  }

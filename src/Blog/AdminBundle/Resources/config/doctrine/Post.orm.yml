@@ -1,0 +1,39 @@
+Blog\AdminBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: Blog\AdminBundle\Entity\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+            nullable: false
+        body:
+            type: text
+            nullabe: false
+        dateCreated:
+            type: datetime
+            nullable: false
+        lastEdited:
+            type: datetime
+            nullabled: false
+        enabled:
+            type: boolean
+            nullable: false
+        deleted:
+            type: boolean
+            nullable: false
+    manyToOne:
+        createdBy:
+            targetEntity: Blog\UserBundle\Entity\User
+            inversedBy: postsCreated
+            nullable: false
+            join_column:
+                name: createdBy_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

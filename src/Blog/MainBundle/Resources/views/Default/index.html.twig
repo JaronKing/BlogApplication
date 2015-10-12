@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="blog-header">
+        <h1 class="blog-title">The Bootstrap Blog</h1>
+        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+            {% for post in posts %}
+            <div class="blog-post">
+                <h2 class="blog-post-title"><a href="{{ path('blog_main_post', { 'id' : post.id }) }}">{{ post.title }}</a></h2>
+                <p class="blog-post-meta">{{ post.dateCreated|date('Y-m-d') }} by <a href="#">{{ post.createdBy.username }}</a></p>
+
+                <p>{{ post.body|slice(0,150) }}...</p>
+
+            </div><!-- /.blog-post -->
+            {% endfor %}
+        <nav>
+            <ul class="pager">
+                <li><a href="#">Previous</a></li>
+                <li><a href="#">Next</a></li>
+            </ul>
+        </nav>
+
+    </div><!-- /.blog-main -->
+
+
+{% endblock body %}
