@@ -11,4 +11,5 @@ app/logs/*
 /web/bundles/
 .idea/
 .idea/*
+/.idea/
 /app/config/config.php
