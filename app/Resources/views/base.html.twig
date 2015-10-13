@@ -42,7 +42,9 @@
         <nav class="blog-nav">
             <a class="blog-nav-item {% if app.request.get('_route') == 'blog_main_homepage' %}active{% endif %}" href="{{ path('blog_main_homepage') }}">Home</a>
             <a class="blog-nav-item {% if app.request.get('_route') == 'blog_main_about' %}active{% endif %}" href="{{ path('blog_main_about') }}">About</a>
-            <a class="blog-nav-item {% if app.request.get('_route') == 'register' %}active{% endif %}" href="{{ path('register') }}">Register</a>
+            <a class="blog-nav-item {% if app.request.get('_route') == 'user_register' %}active{% endif %}" href="{{ path('user_register') }}">Register</a>
+            <a class="blog-nav-item {% if app.request.get('_route') == 'user_login' %}active{% endif %}" href="{{ path('user_login') }}">Login</a>
+            <a class="blog-nav-item {% if app.request.get('_route') == 'user_logout' %}active{% endif %}" href="{{ path('user_logout') }}">Logout</a>
             <a class="blog-nav-item" href="{{ path('admin.login') }}">Admin login</a>
         </nav>
     </div>

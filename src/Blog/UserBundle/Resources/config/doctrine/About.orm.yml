@@ -1,0 +1,19 @@
+Blog\UserBundle\Entity\About:
+    type: entity
+    table: null
+    repositoryClass: Blog\UserBundle\Entity\AboutRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        body:
+            type: text
+        lastEdited:
+            type: datetime
+        lastEditedBy:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -6,26 +6,26 @@ blog_user_homepage:
     path:     /hello/{name}
     defaults: { _controller: BlogUserBundle:Default:index }
 
-login:
+user_login:
     pattern:   /login
     defaults: { _controller: BlogUserBundle:Security:login }
 
-login_check:
+user_login_check:
     pattern:   /login_check
 
-logout:
+user_logout:
     pattern:  /logout
 
-register:
+user_register:
     pattern:  /register
     defaults: { _controller: BlogUserBundle:Registration:register }
 
-checkEmail:
+user_checkEmail:
     pattern:  /check-email
 
-confirm:
+user_confirm:
     pattern:  /confirm/{token}
 
-confirmed:
+user_confirmed:
     pattern:  /confirmed
     defaults: { _controller: BlogUserBundle:Registration:confirmed }

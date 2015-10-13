@@ -1,0 +1,32 @@
+Blog\AdminBundle\Entity\Settings:
+    type: entity
+    table: null
+    repositoryClass: Blog\AdminBundle\Entity\SettingsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        body:
+            type: text
+        metaName:
+            type: string
+            length: 255
+        metaDescription:
+            type: string
+            length: 255
+        pages:
+            type: string
+            length: 255
+        adSpaceHorizontal:
+            type: string
+            length: 255
+        adSpaceVertical:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
