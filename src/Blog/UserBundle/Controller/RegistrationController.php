@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Blog\AdminBundle\Controller;
+namespace Blog\UserBundle\Controller;
 
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FormEvent;
@@ -70,7 +70,7 @@ class RegistrationController extends Controller
             return $response;
         }
 
-        return $this->render('BlogUserBundle:Registration:register.html.twig', array(
+        return $this->render('FOSUserBundle:Registration:register.html.twig', array(
             'form' => $form->createView(),
         ));
     }

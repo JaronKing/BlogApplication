@@ -24,7 +24,6 @@ class UserType extends AbstractType
             ->add('enabled', 'checkbox', array(
                 'attr' => array( 'class' => 'form-control' )
             ))
-            ->add('password')
         ;
 
     }
