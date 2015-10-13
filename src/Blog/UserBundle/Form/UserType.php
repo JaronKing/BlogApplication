@@ -8,6 +8,26 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class UserType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('userName', 'text', array(
+                'attr' => array( 'class' => 'form-control' )
+            ))
+            ->add('email', 'text', array(
+                'attr' => array( 'class' => 'form-control' )
+            ))
+            ->add('enabled', 'checkbox', array(
+                'attr' => array( 'class' => 'form-control' )
+            ))
+            ->add('password')
+        ;
+
+    }
 
     /**
      * @param OptionsResolverInterface $resolver
