@@ -1,0 +1,31 @@
+Blog\AdminBundle\Entity\Message:
+    type: entity
+    table: null
+    repositoryClass: Blog\AdminBundle\Entity\MessageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        message:
+            type: text
+        dateCreated:
+            type: datetime
+    manyToOne:
+        createdBy:
+            targetEntity: Blog\UserBundle\Entity\User
+            inversedBy: messagesCreated
+            nullable: false
+            join_column:
+                name: createdBy_id
+                referencedColumnName: id
+        post:
+            targetEntity: Blog\AdminBundle\Entity\Post
+            inversedBy: messages
+            nullable: false
+            join_column:
+                name: post_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }
