@@ -1,3 +1,7 @@
+blog_message:
+    resource: "@BlogMessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
 blog_admin:
     resource: "@BlogAdminBundle/Resources/config/routing.yml"
     prefix:   /admin/
@@ -12,3 +16,7 @@ blog_user:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /

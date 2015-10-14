@@ -1,0 +1,4 @@
+services:
+#    blog_message.example:
+#        class: Blog\MessageBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
