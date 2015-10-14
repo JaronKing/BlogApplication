@@ -4,6 +4,7 @@ namespace Blog\MainBundle\Controller;
 
 use Blog\AdminBundle\Entity\Message;
 use Blog\AdminBundle\Form\MessageType;
+use Blog\AdminBundle\Controller\MessageController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -26,6 +27,7 @@ class DefaultController extends Controller
             return $this->render('BlogMainBundle:Default:notFound.html.twig');
         }
         $messages = $post->getMessages();
+
         $entity = new Message;
         $form = $this->createForm(new MessageType(), $entity, array(
             'action' => $this->generateUrl('blog_main_post', array('id' => $id)),
@@ -43,14 +45,8 @@ class DefaultController extends Controller
             $entity->setDateCreated(new \DateTime('now'));
             $em->persist($entity);
             $em->flush();
+            return $this->redirect($this->generateUrl('blog_main_post', array( 'id' => $id )));
         }
-
-        $form = $this->createForm(new MessageType(), $entity, array(
-            'action' => $this->generateUrl('blog_main_post', array('id' => $id)),
-            'method' => 'POST',
-        ));
-
-        $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $this->render('BlogMainBundle:Default:post.html.twig', array(
             'post' => $post,

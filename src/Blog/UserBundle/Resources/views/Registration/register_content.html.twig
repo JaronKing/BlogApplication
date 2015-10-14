@@ -1,8 +1,30 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-    {{ form_widget(form) }}
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST"
+      class="fos_user_registration_register">
+    {{ form_start(form) }}
     <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        <label for="fos_user_registration_form_email" class="required form-label">Email</label>
+        <input type="email" id="fos_user_registration_form_email" name="fos_user_registration_form[email]" required="required" class="form-control">
     </div>
+    <div>
+        <label for="fos_user_registration_form_username" class="required form-label">Username</label>
+        <input type="text" id="fos_user_registration_form_username" name="fos_user_registration_form[username]" required="required" maxlength="255" pattern=".{2,}" class="form-control">
+    </div>
+    <div>
+        <label for="fos_user_registration_form_plainPassword_first" class="required form-label">Password</label>
+        <input type="password" id="fos_user_registration_form_plainPassword_first" name="fos_user_registration_form[plainPassword][first]" required="required" class="form-control">
+    </div>
+    <div>
+        <label for="fos_user_registration_form_plainPassword_second" class="required form-label">Password Confirmation</label>
+        <input type="password" id="fos_user_registration_form_plainPassword_second" name="fos_user_registration_form[plainPassword][second]" required="required" class="form-control">
+    </div>
+    <div>
+        <input type="submit" value="Register">
+    </div>
+    {% do form.email.setRendered %}
+    {% do form.username.setRendered %}
+    {% do form.plainPassword.setRendered %}
+
+    {{ form_end(form) }}
 </form>

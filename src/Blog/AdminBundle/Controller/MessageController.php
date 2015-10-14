@@ -61,7 +61,7 @@ class MessageController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Message $entity)
+    public function createCreateForm(Message $entity)
     {
         $form = $this->createForm(new MessageType(), $entity, array(
             'action' => $this->generateUrl('message_create'),
