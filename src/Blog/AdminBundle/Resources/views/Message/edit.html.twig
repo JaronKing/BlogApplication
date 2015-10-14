@@ -1,7 +1,6 @@
-{% extends '::base.html.twig' %}
-
+{% extends '::adminBase.html.twig' %}
+{% set title = 'Message Edit' %}
 {% block body -%}
-    <h1>Message edit</h1>
 
     {{ form(edit_form) }}
 
