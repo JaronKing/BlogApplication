@@ -19,7 +19,7 @@ class MessageMetadata extends BaseMessageMetadata
 
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="Acme\MessageBundle\Entity\Message",
+     *   targetEntity="Blog\MessageBundle\Entity\Message",
      *   inversedBy="metadata"
      * )
      * @var \FOS\MessageBundle\Model\MessageInterface
@@ -27,7 +27,7 @@ class MessageMetadata extends BaseMessageMetadata
     protected $message;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Acme\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Blog\UserBundle\Entity\User")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;

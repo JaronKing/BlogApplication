@@ -90,5 +90,5 @@ framework:
 
 fos_message:
     db_driver: orm
-    thread_class: Acme\MessageBundle\Entity\Thread
-    message_class: Acme\MessageBundle\Entity\Message
+    thread_class: Blog\MessageBundle\Entity\Thread
+    message_class: Blog\MessageBundle\Entity\Message

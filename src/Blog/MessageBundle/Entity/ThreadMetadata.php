@@ -19,7 +19,7 @@ class ThreadMetadata extends BaseThreadMetadata
 
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="Acme\MessageBundle\Entity\Thread",
+     *   targetEntity="Blog\MessageBundle\Entity\Thread",
      *   inversedBy="metadata"
      * )
      * @var \FOS\MessageBundle\Model\ThreadInterface
@@ -27,7 +27,7 @@ class ThreadMetadata extends BaseThreadMetadata
     protected $thread;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Acme\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Blog\UserBundle\Entity\User")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;

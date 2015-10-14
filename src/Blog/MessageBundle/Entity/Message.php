@@ -21,7 +21,7 @@ class Message extends BaseMessage
 
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="Acme\MessageBundle\Entity\Thread",
+     *   targetEntity="Blog\MessageBundle\Entity\Thread",
      *   inversedBy="messages"
      * )
      * @var \FOS\MessageBundle\Model\ThreadInterface
@@ -29,14 +29,14 @@ class Message extends BaseMessage
     protected $thread;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Acme\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Blog\UserBundle\Entity\User")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $sender;
 
     /**
      * @ORM\OneToMany(
-     *   targetEntity="Acme\MessageBundle\Entity\MessageMetadata",
+     *   targetEntity="Blog\MessageBundle\Entity\MessageMetadata",
      *   mappedBy="message",
      *   cascade={"all"}
      * )
