@@ -36,6 +36,7 @@ class MessageController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Message();
+
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 

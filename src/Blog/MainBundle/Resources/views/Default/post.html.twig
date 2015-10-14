@@ -32,14 +32,16 @@
 
 
         </div>
-
+    <div class="col-md-6">
+        {% for message in messages %}
+            {{ message.message }}<br/>
+            {{ message.createdBy.username }}<br/>
+        {% endfor %}
+    </div>
     {% if app.user %}
         <div class="col-md-8">
-            <form action="{{ url('fos_message_thread_new') }}" method="post">
-                {{ form_widget(form) }}
+            {{ form(form) }}
 
-                <input type="submit" />
-            </form>
         </div>
     {% endif %}
 
