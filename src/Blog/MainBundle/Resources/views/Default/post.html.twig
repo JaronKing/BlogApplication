@@ -31,4 +31,16 @@
     </div><!-- /.blog-main -->
 
 
+        </div>
+
+    {% if app.user %}
+        <div class="col-md-8">
+            <form action="{{ url('fos_message_thread_new') }}" method="post">
+                {{ form_widget(form) }}
+
+                <input type="submit" />
+            </form>
+        </div>
+    {% endif %}
+
 {% endblock body %}

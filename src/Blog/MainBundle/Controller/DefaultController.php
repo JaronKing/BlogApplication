@@ -22,6 +22,7 @@ class DefaultController extends Controller
         if (!$post) {
             return $this->render('BlogMainBundle:Default:notFound.html.twig');
         }
+
         return $this->render('BlogMainBundle:Default:post.html.twig', array(
             'post' => $post
         ));

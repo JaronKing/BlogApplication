@@ -1,6 +1,7 @@
 <?php
 
 namespace Blog\AdminBundle\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -271,6 +272,11 @@ class Post
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getTags()
+    {
+        return $this->tags;
+    }
+
+    public function getTag()
     {
         return $this->tags;
     }

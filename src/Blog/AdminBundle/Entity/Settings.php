@@ -226,4 +226,3 @@ class Settings
         return $this->adSpaceVertical;
     }
 }
-

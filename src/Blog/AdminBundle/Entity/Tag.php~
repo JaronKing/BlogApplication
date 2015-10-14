@@ -249,4 +249,28 @@ class Tag
     {
         return $this->posts;
     }
+
+    /**
+     * Set createdBy
+     *
+     * @param \Blog\UserBundle\Entity\User $createdBy
+     *
+     * @return Tag
+     */
+    public function setCreatedBy(\Blog\UserBundle\Entity\User $createdBy = null)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \Blog\UserBundle\Entity\User
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
 }

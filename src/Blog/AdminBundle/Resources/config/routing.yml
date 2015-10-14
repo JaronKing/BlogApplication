@@ -1,3 +1,7 @@
+blog_admin_message:
+    resource: "@BlogAdminBundle/Resources/config/routing/message.yml"
+    prefix:   /message
+
 blog_admin_tag:
     resource: "@BlogAdminBundle/Resources/config/routing/tag.yml"
     prefix:   /tag

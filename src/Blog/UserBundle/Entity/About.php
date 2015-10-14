@@ -110,4 +110,3 @@ class About
         return $this->lastEditedBy;
     }
 }
-

@@ -1,3 +1,0 @@
-blog_message_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: BlogMessageBundle:Default:index }

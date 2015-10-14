@@ -3,13 +3,12 @@
 namespace Blog\UserBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * User
  */
-class User extends BaseUser implements ParticipantInterface
+class User extends BaseUser
 {
     /**
      * @var integer
@@ -111,5 +110,44 @@ class User extends BaseUser implements ParticipantInterface
     public function getTagsCreated()
     {
         return $this->tagsCreated;
+    }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $messagesCreated;
+
+
+    /**
+     * Add messagesCreated
+     *
+     * @param \Blog\AdminBundle\Entity\Message $messagesCreated
+     *
+     * @return User
+     */
+    public function addMessagesCreated(\Blog\AdminBundle\Entity\Message $messagesCreated)
+    {
+        $this->messagesCreated[] = $messagesCreated;
+
+        return $this;
+    }
+
+    /**
+     * Remove messagesCreated
+     *
+     * @param \Blog\AdminBundle\Entity\Message $messagesCreated
+     */
+    public function removeMessagesCreated(\Blog\AdminBundle\Entity\Message $messagesCreated)
+    {
+        $this->messagesCreated->removeElement($messagesCreated);
+    }
+
+    /**
+     * Get messagesCreated
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessagesCreated()
+    {
+        return $this->messagesCreated;
     }
 }

@@ -48,4 +48,9 @@ Blog\AdminBundle\Entity\Post:
                 inversedJoinColumns:
                     tag_id:
                         referencedColumnName: id
+    oneToMany:
+        messages:
+            targetEntity: Blog\AdminBundle\Entity\Message
+            mappedBy: post
+            nullable: true
     lifecycleCallbacks: {  }
