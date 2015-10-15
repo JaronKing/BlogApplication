@@ -1,7 +1,8 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'Show Tag' %}
+{% set panel = 1 %}
 {% block body -%}
-    <table class="record_properties">
+    <table class="table table-striped table-bordered table-hover record_properties">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -41,19 +42,17 @@
             </tr>
         </tbody>
     </table>
-
-
-     <ul class="record_actions">
-    <li>
-        <a href="{{ path('tag') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('tag_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('tag') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('tag_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
 {% endblock %}

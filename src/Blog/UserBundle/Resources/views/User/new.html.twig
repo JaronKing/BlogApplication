@@ -1,7 +1,12 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'Create User' %}
 {% block body -%}
-    <h1>User creation</h1>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ title }}
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
 
     {{ form(form) }}
 
@@ -12,4 +17,6 @@
         </a>
     </li>
 </ul>
+        </div>
+    </div>
 {% endblock %}

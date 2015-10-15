@@ -87,3 +87,7 @@ fos_user:
 
 framework:
     translator: ~
+
+twig:
+    form:
+        resources: ['bootstrap_3_layout.html.twig']

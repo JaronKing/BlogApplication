@@ -1,7 +1,12 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'User Show' %}
 {% block body -%}
-    <h1>User</h1>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ title }}
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
 
     <table class="record_properties">
         <tbody>
@@ -25,4 +30,6 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+        </div>
+    </div>
 {% endblock %}

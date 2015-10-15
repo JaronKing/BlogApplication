@@ -1,7 +1,13 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'User Edit' %}
+{% set panel = 1 %}
 {% block body -%}
-
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {{ title }}
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
 
     {{ form(edit_form) }}
 
@@ -13,4 +19,6 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+        </div>
+    </div>
 {% endblock %}

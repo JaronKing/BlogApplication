@@ -1,15 +1,15 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'Post Edit' %}
+{% set panel = 1 %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
 {% block body -%}
-
     {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('post') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('post') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
 {% endblock %}

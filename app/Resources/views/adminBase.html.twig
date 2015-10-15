@@ -125,7 +125,18 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-md-12">
-                {% block body %}{% endblock %}
+                {% if panel == 1 %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{ title }}
+                        </div>
+                        <div class="panel-body">
+                {% endif %}
+                    {% block body %}{% endblock %}
+                {% if panel == 1 %}
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -140,12 +151,20 @@
 '@BlogAdminBundle/Resources/public/sb-admin-2/bower_components/raphael/raphael-min.js'
 '@BlogAdminBundle/Resources/public/sb-admin-2/bower_components/morrisjs/morris.min.js'
 '@BlogAdminBundle/Resources/public/sb-admin-2/dist/js/sb-admin-2.js'
+'@BlogAdminBundle/Resources/public/sb-admin-2/bower_components/datatables/media/js/jquery.dataTables.min.js'
+'@BlogAdminBundle/Resources/public/sb-admin-2/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js'
 output='assets/js/compiled/main.js'
 %}
-<script async type="text/javascript" src="{{ asset_url }}"></script>
+<script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
 {% block javascripts %}
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#dataTables').DataTable({
+                responsive: true
+            });
+        });
+    </script>
 {% endblock javascripts %}
 
 </body>

@@ -1,14 +1,14 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'Message Create' %}
+{% set panel = 1 %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
 {% block body -%}
-
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('message') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('message') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
 {% endblock %}
