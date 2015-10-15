@@ -1,0 +1,30 @@
+settings:
+    path:     /
+    defaults: { _controller: "BlogAdminBundle:Settings:index" }
+
+settings_show:
+    path:     /{id}/show
+    defaults: { _controller: "BlogAdminBundle:Settings:show" }
+
+settings_new:
+    path:     /new
+    defaults: { _controller: "BlogAdminBundle:Settings:new" }
+
+settings_create:
+    path:     /create
+    defaults: { _controller: "BlogAdminBundle:Settings:create" }
+    methods:  POST
+
+settings_edit:
+    path:     /edit
+    defaults: { _controller: "BlogAdminBundle:Settings:edit" }
+
+settings_update:
+    path:     /{id}/update
+    defaults: { _controller: "BlogAdminBundle:Settings:update" }
+    methods:  [POST, PUT]
+
+settings_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BlogAdminBundle:Settings:delete" }
+    methods:  [POST, DELETE]

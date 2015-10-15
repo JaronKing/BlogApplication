@@ -1,0 +1,63 @@
+{% extends '::adminBase.html.twig' %}
+{% set title = 'Settings' %}
+{% block body -%}
+    <h1>Settings</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Body</th>
+                <td>{{ entity.body }}</td>
+            </tr>
+            <tr>
+                <th>Metaname</th>
+                <td>{{ entity.metaName }}</td>
+            </tr>
+            <tr>
+                <th>Metadescription</th>
+                <td>{{ entity.metaDescription }}</td>
+            </tr>
+            <tr>
+                <th>Pages</th>
+                <td>{{ entity.pages }}</td>
+            </tr>
+            <tr>
+                <th>Adspacehorizontal</th>
+                <td>{{ entity.adSpaceHorizontal }}</td>
+            </tr>
+            <tr>
+                <th>Adspacevertical</th>
+                <td>{{ entity.adSpaceVertical }}</td>
+            </tr>
+            <tr>
+                <th>Github</th>
+                <td>{{ entity.github }}</td>
+            </tr>
+            <tr>
+                <th>Twitter</th>
+                <td>{{ entity.twitter }}</td>
+            </tr>
+            <tr>
+                <th>Facebook</th>
+                <td>{{ entity.facebook }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('settings_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

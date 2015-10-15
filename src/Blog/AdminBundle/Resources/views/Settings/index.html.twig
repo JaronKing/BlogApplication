@@ -1,0 +1,59 @@
+{% extends '::adminBase.html.twig' %}
+{% set title = 'Settings' %}
+{% block body -%}
+    <h1>Settings list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Metaname</th>
+                <th>Metadescription</th>
+                <th>Pages</th>
+                <th>Adspacehorizontal</th>
+                <th>Adspacevertical</th>
+                <th>Github</th>
+                <th>Twitter</th>
+                <th>Facebook</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('settings_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.title }}</td>
+                <td>{{ entity.body }}</td>
+                <td>{{ entity.metaName }}</td>
+                <td>{{ entity.metaDescription }}</td>
+                <td>{{ entity.pages }}</td>
+                <td>{{ entity.adSpaceHorizontal }}</td>
+                <td>{{ entity.adSpaceVertical }}</td>
+                <td>{{ entity.github }}</td>
+                <td>{{ entity.twitter }}</td>
+                <td>{{ entity.facebook }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('settings_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('settings_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('settings_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
