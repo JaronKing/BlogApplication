@@ -1,13 +1,7 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'User Show' %}
+{% set panel = 1 %}
 {% block body -%}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        {{ title }}
-    </div>
-    <!-- /.panel-heading -->
-    <div class="panel-body">
-
     <table class="record_properties">
         <tbody>
             <tr>
@@ -16,8 +10,7 @@
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions">
+    <ul class="record_actions">
     <li>
         <a href="{{ path('admin_user') }}">
             Back to the list
@@ -30,6 +23,4 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
-        </div>
-    </div>
 {% endblock %}

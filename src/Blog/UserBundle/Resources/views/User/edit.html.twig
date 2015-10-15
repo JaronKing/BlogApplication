@@ -1,24 +1,15 @@
 {% extends '::adminBase.html.twig' %}
 {% set title = 'User Edit' %}
 {% set panel = 1 %}
+{% form_theme edit_form 'bootstrap_3_layout.html.twig' %}
 {% block body -%}
-<div class="panel panel-default">
-    <div class="panel-heading">
-        {{ title }}
-    </div>
-    <!-- /.panel-heading -->
-    <div class="panel-body">
-
     {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('admin_user') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
-        </div>
-    </div>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('admin_user') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
 {% endblock %}
