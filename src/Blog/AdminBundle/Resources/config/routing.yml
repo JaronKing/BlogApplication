@@ -1,3 +1,7 @@
+blog_admin_settings:
+    resource: "@BlogAdminBundle/Resources/config/routing/settings.yml"
+    prefix:   /settings
+
 blog_admin_message:
     resource: "@BlogAdminBundle/Resources/config/routing/message.yml"
     prefix:   /message
