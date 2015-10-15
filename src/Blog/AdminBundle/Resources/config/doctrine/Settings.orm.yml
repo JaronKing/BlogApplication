@@ -29,4 +29,13 @@ Blog\AdminBundle\Entity\Settings:
         adSpaceVertical:
             type: string
             length: 255
+        github:
+            type: string
+            length: 255
+        twitter:
+            type: string
+            length: 255
+        facebook:
+            type: string
+            length: 255
     lifecycleCallbacks: {  }
