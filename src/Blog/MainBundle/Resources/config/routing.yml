@@ -9,3 +9,7 @@ blog_main_post:
 blog_main_about:
     path:   /about
     defaults: { _controller: BlogMainBundle:Default:about }
+
+blog_main_social_links:
+    path:   /socialLinks
+    defaults: { _controller: BlogMainBundle:Default:socialLinks }

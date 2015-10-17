@@ -59,4 +59,16 @@ class DefaultController extends Controller
     {
         return $this->render('BlogMainBundle:Default:about.html.twig');
     }
+
+    public function socialLinksAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('BlogAdminBundle:Settings')->findOneBy(array('id' => 1));
+        if (!$entity) {
+            $entity = array();
+        }
+        return $this->render('socialLinks.html.twig', array(
+            'entity' => $entity,
+        ));
+    }
 }
