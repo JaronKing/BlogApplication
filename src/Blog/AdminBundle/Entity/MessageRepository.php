@@ -10,4 +10,16 @@ namespace Blog\AdminBundle\Entity;
  */
 class MessageRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findMessagesByTime($start, $end) {
+        $qb = $this->_em->createQueryBuilder();
+        $qb->select('m')
+            ->from('BlogAdminBundle:Message', 'm')
+            ->where('m.dateCreated >= :start')
+            ->andWhere('m.dateCreated <= :end')
+            ->setParameters( array(
+                'start' => $start,
+                'end' => $end
+            ));
+        return $qb->getQuery()->getArrayResult();
+    }
 }
