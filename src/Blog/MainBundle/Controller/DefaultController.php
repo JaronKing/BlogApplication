@@ -55,9 +55,22 @@ class DefaultController extends Controller
         ));
     }
 
+    public function mainMetaTagAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array('id' => 1) );
+        return $this->render('BlogMainBundle:Default:meta.html.twig', array(
+            'settings' => $settings
+        ));
+    }
+
     public function aboutAction()
     {
-        return $this->render('BlogMainBundle:Default:about.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array('id' => 1) );
+        return $this->render('BlogMainBundle:Default:about.html.twig', array(
+            'settings' => $settings
+        ));
     }
 
     public function socialLinksAction()
