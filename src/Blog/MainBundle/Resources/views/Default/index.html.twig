@@ -21,8 +21,10 @@
             {% endfor %}
         <nav>
             <ul class="pager">
-                <li><a href="#">Previous</a></li>
-                <li><a href="#">Next</a></li>
+                {% if currentPage != 1 %}
+                <li><a href="{{ path('blog_main_homepage', { page : currentPage - 1}) }}">Previous</a></li>
+                {% endif %}
+                <li><a href="{{ path('blog_main_homepage', { page : currentPage + 1}) }}">Next</a></li>
             </ul>
         </nav>
 
