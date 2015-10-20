@@ -280,4 +280,43 @@ class Post
     {
         return $this->tags;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $messages;
+
+
+    /**
+     * Add message
+     *
+     * @param \Blog\AdminBundle\Entity\Message $message
+     *
+     * @return Post
+     */
+    public function addMessage(\Blog\AdminBundle\Entity\Message $message)
+    {
+        $this->messages[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \Blog\AdminBundle\Entity\Message $message
+     */
+    public function removeMessage(\Blog\AdminBundle\Entity\Message $message)
+    {
+        $this->messages->removeElement($message);
+    }
+
+    /**
+     * Get messages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
 }

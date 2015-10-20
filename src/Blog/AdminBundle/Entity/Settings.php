@@ -312,4 +312,34 @@ class Settings
     {
         return $this->facebook;
     }
+
+    /**
+     * @var string
+     */
+    private $sidebarAbout;
+
+
+    /**
+     * Set sidebarAbout
+     *
+     * @param string $sidebarAbout
+     *
+     * @return Settings
+     */
+    public function setSidebarAbout($sidebarAbout)
+    {
+        $this->sidebarAbout = $sidebarAbout;
+
+        return $this;
+    }
+
+    /**
+     * Get sidebarAbout
+     *
+     * @return string
+     */
+    public function getSidebarAbout()
+    {
+        return $this->sidebarAbout;
+    }
 }

@@ -14,6 +14,8 @@ Blog\AdminBundle\Entity\Settings:
             length: 255
         body:
             type: text
+        sidebarAbout:
+            type: text
         metaName:
             type: string
             length: 255

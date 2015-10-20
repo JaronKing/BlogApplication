@@ -17,6 +17,7 @@ class SettingsType extends AbstractType
         $builder
             ->add('title')
             ->add('body')
+            ->add('sidebarAbout')
             ->add('metaName')
             ->add('metaDescription')
             ->add('pages')

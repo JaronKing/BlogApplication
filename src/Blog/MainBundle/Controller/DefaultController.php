@@ -62,6 +62,18 @@ class DefaultController extends Controller
         ));
     }
 
+    public function sidebarAboutAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array('id' => 1) );
+        if (!$settings) {
+            $settings = null;
+        }
+        return $this->render('BlogMainBundle:Default:sidebar.html.twig', array(
+            'settings' => $settings
+        ));
+    }
+
     public function mainMetaTagAction()
     {
         $em = $this->getDoctrine()->getManager();
