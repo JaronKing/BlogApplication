@@ -1,6 +1,8 @@
 blog_main_homepage:
     path:     /{page}
     defaults: { _controller: BlogMainBundle:Default:index, page: 1 }
+    requirements:
+        page: \d+
 
 blog_main_post:
     path:    /post/{id}
