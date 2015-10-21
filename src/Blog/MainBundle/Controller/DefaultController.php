@@ -62,6 +62,15 @@ class DefaultController extends Controller
         ));
     }
 
+    public function footerAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array( 'id' => 1 ) );
+        return $this->render('BlogMainBundle:Default:footer.html.twig', array(
+            'settings' => $settings
+        ));
+    }
+
     public function sidebarAboutAction()
     {
         $em = $this->getDoctrine()->getManager();

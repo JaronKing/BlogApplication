@@ -10,8 +10,6 @@
     <link href="{{ asset_url }}" alt="Blog favicon" rel="icon">
     {% endimage %}
 
-    <title>Blog Template for Bootstrap</title>
-
     {% stylesheets
     'bundles/blogmain/bootstrap/css/bootstrap.min.css'
     'bundles/blogmain/bootstrap/css/blog.css'
@@ -66,12 +64,7 @@
 
 </div><!-- /.container -->
 
-        <footer class="blog-footer">
-            <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            <p>
-                <a href="#">Back to top</a>
-            </p>
-        </footer>
+        {{ render(controller('BlogMainBundle:Default:footer')) }}
 
         {% javascripts
         '@BlogMainBundle/Resources/public/bootstrap/js/bootstrap.min.js'
