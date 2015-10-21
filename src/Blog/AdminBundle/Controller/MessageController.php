@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Blog\AdminBundle\Entity\Message;
-use Blog\AdminBundle\Form\MessageType;
+use Blog\AdminBundle\Form\Type\MessageType;
 
 /**
  * Message controller.

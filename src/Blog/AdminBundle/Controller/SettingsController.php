@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Blog\AdminBundle\Entity\Settings;
-use Blog\AdminBundle\Form\SettingsType;
+use Blog\AdminBundle\Form\Type\SettingsType;
 
 /**
  * Settings controller.

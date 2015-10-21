@@ -1,12 +1,12 @@
 <?php
 
-namespace Blog\AdminBundle\Form;
+namespace Blog\AdminBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class TagType extends AbstractType
+class PostType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -15,10 +15,18 @@ class TagType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', array(
+            ->add('title', 'text', array(
                 'attr' => array( 'class' => 'form-control' )
             ))
-            ->add('description', 'textarea', array(
+            ->add('body', 'textarea', array(
+                'attr' => array( 'class' => 'form-control' )
+            ))
+            ->add('tag', 'entity', array(
+                'class' => 'BlogAdminBundle:Tag',
+                'property' => 'name',
+                'required' => false,
+                'multiple' => true,
+                'mapped' => true,
                 'attr' => array( 'class' => 'form-control' )
             ))
         ;
@@ -30,7 +38,7 @@ class TagType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Blog\AdminBundle\Entity\Tag'
+            'data_class' => 'Blog\AdminBundle\Entity\Post'
         ));
     }
 
@@ -39,6 +47,6 @@ class TagType extends AbstractType
      */
     public function getName()
     {
-        return 'blog_adminbundle_tag';
+        return 'blog_adminbundle_post';
     }
 }

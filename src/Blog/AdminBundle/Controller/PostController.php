@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Blog\AdminBundle\Entity\Post;
-use Blog\AdminBundle\Form\PostType;
+use Blog\AdminBundle\Form\Type\PostType;
 
 /**
  * Post controller.

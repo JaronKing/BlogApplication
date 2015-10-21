@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Blog\AdminBundle\Entity\Tag;
-use Blog\AdminBundle\Form\TagType;
+use Blog\AdminBundle\Form\Type\TagType;
 
 /**
  * Tag controller.
