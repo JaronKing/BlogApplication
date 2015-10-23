@@ -8,6 +8,12 @@ blog_main_post:
     path:    /post/{id}
     defaults: { _controller: BlogMainBundle:Default:post }
 
+blog_main_archives:
+    path:   /archive/{date}
+    defaults: { _controller: BlogMainBundle:Archives:index }
+    requirements:
+        _method: GET
+
 blog_main_about:
     path:   /about
     defaults: { _controller: BlogMainBundle:Default:about }

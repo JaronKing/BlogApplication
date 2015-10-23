@@ -10,4 +10,18 @@ namespace Blog\AdminBundle\Entity;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findPostsByTime($start, $end)
+    {
+        $qb = $this->_em->createQueryBuilder();
+        $qb->select('m')
+            ->from('BlogAdminBundle:Post', 'm')
+            ->where('m.dateCreated >= :start')
+            ->andWhere('m.dateCreated <= :end')
+            ->setParameters( array(
+                'start' => $start,
+                'end' => $end
+            ));
+        return $qb->getQuery()->getArrayResult();
+
+    }
 }
