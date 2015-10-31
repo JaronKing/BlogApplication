@@ -9,7 +9,7 @@
                 <h2 class="blog-post-title"><a href="{{ path('blog_main_post', { 'id' : post.id }) }}">{{ post.title }}</a></h2>
                 <p class="blog-post-meta">{{ post.dateCreated|date('Y-m-d') }}</p>
 
-                <p>{{ post.body|slice(0,150) }}...</p>
+                <p>{{ post.body|slice(0,150)|raw }}...</p>
 
             </div><!-- /.blog-post -->
             {% endfor %}
