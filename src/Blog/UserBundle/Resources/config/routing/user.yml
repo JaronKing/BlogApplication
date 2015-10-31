@@ -15,9 +15,9 @@ admin_user_create:
     defaults: { _controller: "BlogUserBundle:User:create" }
     methods:  POST
 
-admin_user_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "BlogUserBundle:User:edit" }
+#admin_user_edit:
+#    path:     /{id}/edit
+#    defaults: { _controller: "BlogUserBundle:User:edit" }
 
 admin_user_update:
     path:     /{id}/update
