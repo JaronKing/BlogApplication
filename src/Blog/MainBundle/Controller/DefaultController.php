@@ -64,8 +64,7 @@ class DefaultController extends Controller
 
     public function footerAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array( 'id' => 1 ) );
+        $settings = $this->getSettings();
         return $this->render('BlogMainBundle:Default:footer.html.twig', array(
             'settings' => $settings
         ));
@@ -73,11 +72,7 @@ class DefaultController extends Controller
 
     public function sidebarAboutAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array('id' => 1) );
-        if (!$settings) {
-            $settings = null;
-        }
+        $settings = $this->getSettings();
         return $this->render('BlogMainBundle:Default:sidebar.html.twig', array(
             'settings' => $settings
         ));
@@ -85,8 +80,7 @@ class DefaultController extends Controller
 
     public function mainMetaTagAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array('id' => 1) );
+        $settings = $this->getSettings();
         return $this->render('BlogMainBundle:Default:meta.html.twig', array(
             'settings' => $settings
         ));
@@ -94,8 +88,7 @@ class DefaultController extends Controller
 
     public function aboutAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $settings = $em->getRepository('BlogAdminBundle:Settings')->findOneBy( array('id' => 1) );
+        $settings = $this->getSettings();
         return $this->render('BlogMainBundle:Default:about.html.twig', array(
             'settings' => $settings
         ));
@@ -103,13 +96,19 @@ class DefaultController extends Controller
 
     public function socialLinksAction()
     {
-        $em = $this->getDoctrine()->getManager();
-        $entity = $em->getRepository('BlogAdminBundle:Settings')->findOneBy(array('id' => 1));
-        if (!$entity) {
-            $entity = array();
-        }
+        $entity = $this->getSettings();
         return $this->render('socialLinks.html.twig', array(
             'entity' => $entity,
         ));
+    }
+
+    private function getSettings()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $entity = $em->getRepository('BlogAdminBundle:Settings')->findOneBy(array('id' => 1));
+        if (!$entity) {
+            $entity = null;
+        }
+        return $entity;
     }
 }

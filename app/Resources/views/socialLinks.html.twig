@@ -1,5 +1,6 @@
 <div class="sidebar-module">
     <h4>Elsewhere</h4>
+    {% if entity != null %}
     <ol class="list-unstyled">
         {% if entity.github %}
             <li><a href="{{ entity.github }}">GitHub</a></li>
@@ -11,4 +12,5 @@
             <li><a href="{{ entity.facebook }}">Facebook</a></li>
         {% endif %}
     </ol>
+    {% endif %}
 </div>
