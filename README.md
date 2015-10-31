@@ -1,6 +1,19 @@
 jaronking.dev
 =============
 
+
+How To Install
+===================
+
+1. Clone git repository into a new installation of Symfony 2.
+2. Run composer install to install required bundles.
+3. Create an admin account by using app/console fos:user:create and login to admin panel.
+4. Go to settings and generate settings information.
+
+
+About This Application
+=========================
+
 A Symfony 2 project that includes Blogging CMS, User account creation and Blog post commenting.
 
 Bootstrap example Blog template is used for the front-end blog.  SB Admin 2 is used for the back-end Admin panel.
