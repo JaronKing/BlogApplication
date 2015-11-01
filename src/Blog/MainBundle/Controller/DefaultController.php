@@ -111,4 +111,12 @@ class DefaultController extends Controller
         }
         return $entity;
     }
+
+    public function headerAction()
+    {
+        $entity = $this->getSettings();
+        return $this->render('BlogMainBundle:Default:header.html.twig', array(
+            'settings' => $entity,
+        ));
+    }
 }
