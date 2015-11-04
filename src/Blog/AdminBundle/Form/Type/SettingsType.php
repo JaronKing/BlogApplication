@@ -26,6 +26,7 @@ class SettingsType extends AbstractType
             ->add('github')
             ->add('twitter')
             ->add('facebook')
+            ->add('linkedin')
         ;
     }
     

@@ -342,4 +342,33 @@ class Settings
     {
         return $this->sidebarAbout;
     }
+    /**
+     * @var string
+     */
+    private $linkedin;
+
+
+    /**
+     * Set linkedin
+     *
+     * @param string $linkedin
+     *
+     * @return Settings
+     */
+    public function setLinkedin($linkedin)
+    {
+        $this->linkedin = $linkedin;
+
+        return $this;
+    }
+
+    /**
+     * Get linkedin
+     *
+     * @return string
+     */
+    public function getLinkedin()
+    {
+        return $this->linkedin;
+    }
 }

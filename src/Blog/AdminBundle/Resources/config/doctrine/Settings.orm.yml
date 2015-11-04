@@ -22,22 +22,33 @@ Blog\AdminBundle\Entity\Settings:
         metaDescription:
             type: string
             length: 255
+            nullable: true
         pages:
             type: string
             length: 255
+            nullable: true
         adSpaceHorizontal:
             type: string
             length: 255
+            nullable: true
         adSpaceVertical:
             type: string
             length: 255
+            nullable: true
         github:
             type: string
             length: 255
+            nullable: true
         twitter:
             type: string
             length: 255
+            nullable: true
         facebook:
             type: string
             length: 255
+            nullable: true
+        linkedin:
+            type: string
+            lenght: 255
+            nullable: true
     lifecycleCallbacks: {  }
