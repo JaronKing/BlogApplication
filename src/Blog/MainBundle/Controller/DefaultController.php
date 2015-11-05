@@ -5,6 +5,7 @@ namespace Blog\MainBundle\Controller;
 use Blog\AdminBundle\Entity\Message;
 use Blog\AdminBundle\Form\Type\MessageType;
 use Blog\AdminBundle\Controller\MessageController;
+use Blog\MainBundle\Entity\Record;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
