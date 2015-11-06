@@ -14,13 +14,7 @@ class DefaultController extends Controller
     public function indexAction($page)
     {
         $em = $this->getDoctrine()->getManager();
-        $offset = $page * 10;
-        $posts = $em->getRepository('BlogAdminBundle:Post')->findAll(
-            array(),
-            array(),
-            10,
-            $offset
-        );
+        $posts = $em->getRepository('BlogAdminBundle:Post')->findPostsByPage($page);
         return $this->render('BlogMainBundle:Default:index.html.twig', array(
             'posts' => $posts,
             'currentPage' => $page

@@ -24,4 +24,17 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
         return $qb->getQuery()->getArrayResult();
 
     }
+
+    public function findPostsByPage($page)
+    {
+        $pageResult = ($page - 1) * 10;
+        $qb = $this->_em->createQueryBuilder();
+        $qb->select('m')
+            ->from('BlogAdminBundle:Post', 'm')
+            ->where('m.enabled = true')
+            ->setMaxResults(10)
+            ->setFirstResult($pageResult)
+            ->orderBy('m.dateCreated' , 'DESC');
+        return $qb->getQuery()->getArrayResult();
+    }
 }
