@@ -18,6 +18,8 @@ A Symfony 2 project that includes Blogging CMS, User account creation and Blog p
 
 Bootstrap example Blog template is used for the front-end blog.  SB Admin 2 is used for the back-end Admin panel.
 
+Posts have a wyziwyg, Bootstrap 3 wyziwyg HTML 5.
+
 This application uses the following doctrine 2 conventions:
 oneToMany
 manyToOne
