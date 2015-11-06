@@ -17,6 +17,7 @@
     'bundles/blogadmin/sb-admin-2/dist/css/sb-admin-2.css'
     'bundles/blogadmin/sb-admin-2/bower_components/morrisjs/morris.css'
     'bundles/blogadmin/sb-admin-2/bower_components/font-awesome/css/font-awesome.min.css'
+    'bundles/blogmain/wysiwyg/bootstrap3-wysihtml5.css'
     filter='cssrewrite'
     output='assets/css/compiled/main.css'
     %}
@@ -148,6 +149,7 @@
 '@BlogAdminBundle/Resources/public/sb-admin-2/dist/js/sb-admin-2.js'
 '@BlogAdminBundle/Resources/public/sb-admin-2/bower_components/datatables/media/js/jquery.dataTables.min.js'
 '@BlogAdminBundle/Resources/public/sb-admin-2/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js'
+'@BlogMainBundle/Resources/public/wysiwyg/bootstrap3-wysihtml5.all.min.js'
 output='assets/js/compiled/main.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
@@ -158,6 +160,7 @@ output='assets/js/compiled/main.js'
             $('#dataTables').DataTable({
                 responsive: true
             });
+            $('.wysiwyg').wysihtml5();
         });
     </script>
 {% endblock javascripts %}

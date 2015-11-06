@@ -19,7 +19,7 @@ class PostType extends AbstractType
                 'attr' => array( 'class' => 'form-control' )
             ))
             ->add('body', 'textarea', array(
-                'attr' => array( 'class' => 'form-control' )
+                'attr' => array( 'class' => 'form-control wysiwyg' )
             ))
             ->add('tag', 'entity', array(
                 'class' => 'BlogAdminBundle:Tag',
