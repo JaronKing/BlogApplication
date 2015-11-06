@@ -16,7 +16,9 @@ class SettingsType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('body')
+            ->add('body', 'textarea', array(
+                'attr' => array( 'class' => 'form-control wysiwyg' )
+            ))
             ->add('sidebarAbout')
             ->add('metaName')
             ->add('metaDescription')

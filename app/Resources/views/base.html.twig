@@ -13,7 +13,6 @@
     {% stylesheets
     'bundles/blogmain/bootstrap/css/bootstrap.min.css'
     'bundles/blogmain/bootstrap/css/blog.css'
-    'bundles/blogmain/wysiwyg/bootstrap3-wysihtml5.css'
     filter='cssrewrite'
     output='assets/css/compiled/main.css'
     %}
@@ -81,7 +80,6 @@
         {% javascripts
         '@BlogMainBundle/Resources/public/bootstrap/js/bootstrap.min.js'
         '@BlogMainBundle/Resources/public/js/jquery-1.11.3.min.js'
-        '@BlogMainBundle/Resources/public/wysiwyg/bootstrap3-wysihtml5.css'
         output='assets/js/compiled/main.js'
         %}
         <script async type="text/javascript" src="{{ asset_url }}"></script>
