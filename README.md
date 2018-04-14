@@ -1,4 +1,4 @@
-jaronking.dev
+BlogApplication
 =============
 
 
